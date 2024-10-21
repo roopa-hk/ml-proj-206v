@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_excel("DataNew.xlsx")
 print("Initial DataFrame:")
-print(df.head())  # Print the first 6 lines
+print(df.head())
 print(df.shape)
 
 columns = ['ATACpeakScore', 'K562_POLR2A_ENCSR000BMR', 'K562_POLR2A_ENCSR000EHL', 'K562_POLR2A_ENCSR000FAJ', 'K562_POLR2A_ENCSR388QZF',
@@ -16,7 +16,7 @@ columns = ['ATACpeakScore', 'K562_POLR2A_ENCSR000BMR', 'K562_POLR2A_ENCSR000EHL'
            'K562_E2F6_ENCSR000BLI', 'K562_E2F6_ENCSR000EWJ', 'K562_E2F8_ENCSR953DVM', 'K562_E4F1_ENCSR731LHZ', 'K562_H3K4me1_ENCSR000EWC',
            'K562_H3K4me2_ENCSR000AKT', 'K562_H3K4me3_ENCSR000AKU', 'K562_H3K4me3_ENCSR000DWD', 'K562_H3K4me3_ENCSR000EWA',
            'K562_H3K4me3_ENCSR668LDD']
-# boxplot (without log2 transformation)
+
 # Loop through the columns to create boxplots
 # Create the 'images' directory if it doesn't exist
 os.makedirs('boxplot_images', exist_ok=True)
