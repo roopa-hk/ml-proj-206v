@@ -26,7 +26,7 @@ for i, col in enumerate(columns):
     plt.figure(figsize=(8, 6))
     sns.boxplot(x='Region', y=np.log2(df[col]), data=df, hue='Region', palette='None', legend=False)
     plt.title('Boxplot of log2transformed by Distinct Genome Region')
-    #plt.savefig(os.path.join('boxplot_images', f'{col}_box_plot.png'), dpi=300)
+    plt.savefig(os.path.join('boxplot_images', f'{col}_box_plot.png'), dpi=300)
 
 plt.tight_layout()  # Adjust layout
 #plt.show()
@@ -54,8 +54,8 @@ print(test_scale[:5])
 
 # To scale all datasets, uncomment and run the lines below
 
-train_scale = scaler.fit_transform(train_dat.iloc[:, 5:27])  # Columns 6 to 29 (zero-indexed)
-test_scale = scaler.transform(test_dat.iloc[:, 5:27])   # Columns 6 to 29 (zero-indexed)
+train_scale = scaler.fit_transform(train_dat.iloc[:, 5:27])
+test_scale = scaler.transform(test_dat.iloc[:, 5:27])   
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix
